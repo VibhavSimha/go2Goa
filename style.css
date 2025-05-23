@@ -6,22 +6,40 @@
 }
 .para1{
     color: white;
-    font-size: 50px;
+    font-size: 6rem;
     text-align: center;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(https://cdn.wallpapersafari.com/94/12/fNeGtn.jpg);
+    background-image: url(https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z29hfGVufDB8fDB8fHww);
     overflow: hidden; 
     position: relative;
     background-attachment: fixed; 
     background-size: cover;
     background-repeat: no-repeat; background-position: top center;
+    
 }
+.para2{
+    color: black;
+    font-size: 5rem;
+    text-align: center;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://digital.ihg.com/is/image/ihg/holiday-inn-north-goa-7643911116-4x3);
+    overflow: hidden; 
+    position: relative;
+    background-attachment: fixed; 
+    background-size: cover;
+    background-repeat: no-repeat; background-position: center center;
+    
+}
+
 .nonpara1{
     color: whitesmoke;
-    font-size: 30px;
+    font-size: 5rem;
     text-align: center;
     display: flex;
     justify-content: center;
