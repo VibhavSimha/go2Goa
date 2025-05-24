@@ -5,7 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .para1{
-    color: rgb(255, 211, 154);;
+    color: rgb(255, 211, 154);
     font-size: 6rem;
     text-align: center;
     height: 100vh;
@@ -22,14 +22,14 @@
     
 }
 .para2{
-    color: black;
-    font-size: 5rem;
+    color: rgb(255, 211, 154);
+    font-size: 7rem;
     text-align: center;
-    height: 25vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(https://digital.ihg.com/is/image/ihg/holiday-inn-north-goa-7643911116-4x3);
+    background-image: url(https://www.onmycanvas.com/wp-content/uploads/2020/08/Butterfly-beach-goa-front-view.jpg);
     overflow: hidden; 
     position: relative;
     background-attachment: fixed; 
