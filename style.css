@@ -6,7 +6,7 @@
 }
 .para1{
     color: rgb(255, 211, 154);
-    font-size: 6rem;
+    font-size: 5rem;
     text-align: center;
     height: 100vh;
     display: flex;
@@ -23,7 +23,7 @@
 }
 .para2{
     color: rgb(255, 211, 154);
-    font-size: 7rem;
+    font-size: 3rem;
     text-align: center;
     height: 75vh;
     display: flex;
@@ -40,13 +40,13 @@
 
 .nonpara1{
     color: whitesmoke;
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: #1c1c1c;
     scroll-behavior: smooth;
 }
