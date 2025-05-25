@@ -42,6 +42,23 @@
     background-position: center center;
     scroll-behavior: smooth;
 }
+.para3 {
+    color: rgb(255, 211, 154);
+    font-size: 3rem;
+    text-align: center;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://media1.giphy.com/media/l3vRbNFMuFt5Zm372/giphy.gif?cid=6c09b952aucouko3z7mvq1uti55vqegznhc89g14bi4i6qgi&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g);
+    overflow: hidden;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    scroll-behavior: smooth;
+}
 
 .nonpara1 {
     color: whitesmoke;
