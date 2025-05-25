@@ -59,7 +59,23 @@
     background-position: center center;
     scroll-behavior: smooth;
 }
-
+.para4 {
+    color: rgb(255, 211, 154);
+    font-size: 3rem;
+    text-align: center;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://gogoaedinburgh.co.uk/wp-content/uploads/2022/07/go-goa-indian-food-edinburgh-takeaway-delivery-edinburgh-1536x917.jpg);
+    overflow: hidden;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    scroll-behavior: smooth;
+}
 .nonpara1 {
     color: whitesmoke;
     font-size: 3rem;
