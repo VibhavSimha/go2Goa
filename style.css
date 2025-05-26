@@ -78,6 +78,23 @@
     background-position: center center;
     scroll-behavior: smooth;
 }
+.para5 {
+    color: rgb(255, 211, 154);
+    font-size: 3rem;
+    text-align: center;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://www.zdnet.com/a/img/resize/7ecf259b4130d7418be71f0764f581a2c0ff7777/2024/01/03/2f68f2da-afef-4613-a797-a3406182819e/gettyimages-1337617436.jpg?auto=webp&width=1280);
+    overflow: hidden;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    scroll-behavior: smooth;
+}
 
 .nonpara1 {
     color: whitesmoke;
@@ -111,7 +128,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 40vh;
+    height: 50vh;
     padding: 20px;
     background-color: #1a1a1a;
 }
@@ -121,7 +138,7 @@
     height: 30vh;
     width: 30vw;
     flex-direction: column;
-    overflow: hidden;
+    overflow-y: scroll;
     background-color: #2b2b2b;
     padding: 15px;
     border-radius: 10px;
@@ -159,17 +176,21 @@
 .chatOutput {
     display: flex;
     flex-direction: row;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     justify-content: flex-start;
 }
 
 .userInput {
     display: flex;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     justify-content: flex-end;
 }
-
-p {
+.signOff{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#chatbot p {
     display: flex;
     background-color: blueviolet;
     color: rgb(255, 211, 154);
@@ -198,4 +219,14 @@ p {
     .carousel-caption p {
         font-size: 1rem;
     }
+    #chatresponse{
+        width: 100vw;
+    }
+    #chatbot p{
+        max-width: 70vw;
+    }
+    #chatForm{
+        width: 100vw;
+    }
+
 }
