@@ -50,7 +50,8 @@ async function streamChat(payload) {
 async function generateText() {
     let response = "";
     const chatresponse = await streamChat(groqchattext)
-    textArea.textContent += (chatresponse.choices[0]?.message?.content || "");
+    textArea.innerHTML += 
+    `<div class="chatOutput"><p>${(chatresponse.choices[0]?.message?.content +"\n" || "")}</p></div>`
     response += chatresponse.choices[0]?.message?.content;
     groqchattext.messages.push({
         "role": "assistant",
@@ -63,11 +64,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     generateText();
     chatForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        textArea.textContent +=userInput.value+"\n"
+        textArea.innerHTML+=`<div class="userInput"><p>${userInput.value}</p></div>`
         groqchattext.messages.push({
             "role": "user",
             "content": userInput.value
         })
         generateText(userInput.value);
+        userInput.value="";
     })
 })
