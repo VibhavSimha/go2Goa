@@ -1,35 +1,73 @@
-import 'dotenv/config'
-import Groq from "groq-sdk";
+const API_KEY = "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"
+let groqchattext = {
+    "messages": [
+        {
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+            role: "system",
+            content: "You are a helpful trip planning assistant created by Vibhav to help users plan trip to Goa, India. Users will be staying at Holiday Inn Goa Candolim. Users have already been guided about Sinquerim Beach, Butterfly Beach and Agonda Beach as possible beach destinations. Users have also been guided about Basilica of Bom Jesus, Museum of Goa and Yatch Casino - Deltin Royale as possible indoor tourist places. Additionally Elephant And Co. Anjuna, Joecons Beach Shack and Copperleaf Panaji are some possible resturants suggested.You will help them with by guiding about possible tourist places and other advice. Please keep all replies under 50 words, be concise, and end cleanly—do not trail off.",
 
-export async function main() {
-    const chatCompletion = await getGroqChatCompletion();
-    // Print the completion returned by the LLM.
-    for await (const chunk of chatCompletion)
-        console.log(chunk.choices[0]?.delta?.content || "");
+        },
+        {
+            role: "user",
+            content: "Hello",
+        },
+    ],
+    "model": "llama-3.3-70b-versatile",
+    "temperature": 0.3,
+    "max_completion_tokens": 100,
+    stop: ["\n\n\n"]  
 }
 
 export async function getGroqChatCompletion() {
-    return groq.chat.completions.create({
-        "messages": [
-            {
-
-                role: "system",
-                content: "You are a helpful trip planning assistant created by Vibhav to help users plan trip to Goa, India. Users will be staying at Holiday Inn Goa Candolim. Users have already been guided about Sinquerim Beach, Butterfly Beach and Agonda Beach as possible beach destinations. Users have also been guided about Basilica of Bom Jesus, Museum of Goa and Yatch Casino - Deltin Royale as possible indoor tourist places. Additionally Elephant And Co. Anjuna, Joecons Beach Shack and Copperleaf Panaji are some possible resturants suggested.",
-
-            },
-            {
-                role: "user",
-                content: "Hi how are you?",
-            },
-        ],
-        "model": "llama-3.3-70b-versatile",
-        "temperature": 0.5,
-        "max_completion_tokens": 511,
-        "stream": true,
-    });
+    return groq.chat.completions.create(groqchattext);
 }
-document.addEventListener('DOMContentLoaded', () => {
-    
+
+const textArea = document.getElementById('chatresponse');
+const chatForm = document.getElementById('chatForm');
+const userInput = document.getElementById('userinput');
+
+
+async function streamChat(payload) {
+    const response = await fetch(
+        "https://api.groq.com/openai/v1/chat/completions",
+        {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${API_KEY}`,
+                "Content-Type": "application/json"
+            },
+            // Turn OFF streaming here
+            body: JSON.stringify({ ...payload, stream: false })
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error(`API error ${response.status}`);
+    }
+
+    return response.json();
+}
+async function generateText() {
+    let response = "";
+    const chatresponse = await streamChat(groqchattext)
+    textArea.textContent += (chatresponse.choices[0]?.message?.content || "");
+    response += chatresponse.choices[0]?.message?.content;
+    groqchattext.messages.push({
+        "role": "assistant",
+        "content": response
+    })
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    console.log("Started DOM");
+    generateText();
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        textArea.textContent +=userInput.value+"\n"
+        groqchattext.messages.push({
+            "role": "user",
+            "content": userInput.value
+        })
+        generateText(userInput.value);
+    })
 })
