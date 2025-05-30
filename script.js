@@ -1,4 +1,4 @@
-const API_KEY = "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"
+const API_KEY = "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"
 let groqchattext = {
     "messages": [
         {
