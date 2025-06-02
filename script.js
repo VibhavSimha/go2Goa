@@ -12,7 +12,7 @@ let groqchattext = {
             content: "Hello",
         },
     ],
-    "model": "meta-llama/llama-guard-4-12b",
+    "model": "llama-3.3-70b-versatile",
     "temperature": 0.3,
     "max_completion_tokens": 100,
     stop: ["\n\n\n"]  
