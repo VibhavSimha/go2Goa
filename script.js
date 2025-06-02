@@ -1,4 +1,4 @@
-const API_KEY = "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"
+const API_KEY = "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"
 let groqchattext = {
     "messages": [
         {
@@ -12,7 +12,7 @@ let groqchattext = {
             content: "Hello",
         },
     ],
-    "model": "llama-3.3-70b-versatile",
+    "model": "meta-llama/llama-guard-4-12b",
     "temperature": 0.3,
     "max_completion_tokens": 100,
     stop: ["\n\n\n"]  
