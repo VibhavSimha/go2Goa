@@ -1,4 +1,4 @@
-const API_KEY = "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"
+const API_KEY = "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"
 let groqchattext = {
     "messages": [
         {
@@ -14,7 +14,7 @@ let groqchattext = {
     ],
     "model": "llama-3.3-70b-versatile",
     "temperature": 0.3,
-    "max_completion_tokens": 100,
+    "max_completion_tokens": 20,
     stop: ["\n\n\n"]  
 }
 
